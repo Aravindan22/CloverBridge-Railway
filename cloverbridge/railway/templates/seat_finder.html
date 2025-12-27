@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Seat Position Finder</title>
+</head>
+<body>
+    <h2>Enter Seat Number</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="number" name="seat_number" placeholder="Enter seat number" min=1 max=72 required>
+        <button type="submit">Check Position</button>
+    </form>
+   
+    {% if position_details %}
+        <h3>Seat Number: {{ position_details.seat_number }}</h3>
+        <h3>Seat Position: {{ position_details.position }}</h3>
+    {% endif %}
+</body>
+</html>
