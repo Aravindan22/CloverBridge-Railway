@@ -15,8 +15,11 @@ def get_seat_position(seat_number):
     return seat_map.get(seat_number%8)
 
 def seat_finder(request):
+    """
+        Seat Finder View
+            Takes seat number and spits the position
+    """
     context = None
-
     if request.method == "POST":
         seat_number = request.POST.get("seat_number")
 
